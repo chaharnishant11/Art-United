@@ -16,11 +16,25 @@
                     <% if(!currentUser){ %>
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Sign Up</a></li>
-                    <% }else{ %>
-                        <li><a href="#">Singed In As <%= currentUser.username %></a></li>
+                    <% } else { %>
+                        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
                         <li><a href="/logout">Logout</a></li>
                     <% } %>
                 </ul>
             </div>
         </div>
     </nav>
+    
+    <div class="container">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
